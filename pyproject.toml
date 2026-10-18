@@ -51,6 +51,10 @@ dev = [
     "pytest>=8.3.5",
     "pytest-xdist>=3.6.1",
 ]
+typing = [
+    "mypy==1.14.1; python_version < '3.9'",
+    "mypy==1.17.1; python_version >= '3.9'",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
