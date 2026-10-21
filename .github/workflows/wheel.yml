@@ -179,11 +179,9 @@ jobs:
           - 'win_amd64'
           - 'win_arm64'
         exclude:
+          # CPython 3.8 has no Windows ARM64 build: cibuildwheel obtains ARM64
+          # CPython from the pythonarm64 NuGet package, which starts at 3.9.7.
           - py: 'cp38'
-            arch: 'win_arm64'
-          - py: 'cp39'
-            arch: 'win_arm64'
-          - py: 'cp310'
             arch: 'win_arm64'
     runs-on: ${{ matrix.arch == 'win_arm64' && 'windows-11-arm' || 'windows-2022' }}
     env:
